@@ -49,6 +49,8 @@
 
 	var app = angular.module('app', []);
 
+	__webpack_require__(3)(app);
+
 	app.controller('MainController', [function() {
 	  var vm = this;
 	  vm.plz = 'respond';
@@ -31541,6 +31543,27 @@
 	})(window);
 
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(app) {
+	  __webpack_require__(4)(app);
+	}
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.component('addressInput', {
+	    templateUrl: './components/address-input/template.html',
+	    controller: function() {}
+	  })
+	}
+
 
 /***/ }
 /******/ ]);
