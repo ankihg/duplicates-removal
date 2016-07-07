@@ -31,7 +31,7 @@ describe('duplicates remover testing', () => {
   describe('ensure speed', () => {
     it('fast', function(done) {
       this.timeout(50000)
-      let head = generateDuplicatesList(10);
+      let head = generateDuplicatesList(100000);
       let start = new Date();
       removeDuplicates(head);
       let stop = new Date();
