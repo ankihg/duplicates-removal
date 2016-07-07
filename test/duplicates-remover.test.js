@@ -30,25 +30,26 @@ describe('duplicates remover testing', () => {
   })
 
 
-  // describe('ensure speed', () => {
-  //   it('fast', function(done) {
-  //     this.timeout(50000)
-  //     let head = generateDuplicatesList(10);
-  //     console.log('generated');
-  //     let start = new Date();
-  //     console.log('timer started');
-  //     removeDuplicates(list);
-  //     let stop = new Date();
-  //     console.log('timer ended');
-  //     console.log(start);
-  //     console.log(stop);
-  //     let time = stop - start;
-  //     console.log(time);
-  //     done();
-  //   })
-  //
-  //
-  // })
+  describe('ensure speed', () => {
+    it('fast', function(done) {
+      this.timeout(50000)
+      let head = generateDuplicatesList(100000);
+      console.log(head);
+      console.log('generated');
+      let start = new Date();
+      console.log('timer started');
+      removeDuplicates(head);
+      let stop = new Date();
+      console.log('timer ended');
+      console.log(start);
+      console.log(stop);
+      let time = stop - start;
+      console.log(time);
+      done();
+    })
+
+
+  })
 
 
 
