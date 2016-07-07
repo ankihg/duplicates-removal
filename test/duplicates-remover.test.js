@@ -9,10 +9,8 @@ describe('duplicates remover testing', () => {
     let head = new Node(null);
     let list = ['plz@respond.com', 'tad@salemtourism.org', 'hilda@squirrels.net', 'hilda@squirrels.net', 'tad@salemtourism.org', 'hjalp@mig.com'];
     head.fromArr(list);
-    console.log(head.toArr());
 
     removeDuplicates(head);
-    console.log(head.toArr());
 
     // same order as input
     expect(head.next.value).eql('plz@respond.com');
@@ -33,7 +31,7 @@ describe('duplicates remover testing', () => {
   describe('ensure speed', () => {
     it('fast', function(done) {
       this.timeout(50000)
-      let head = generateDuplicatesList(100000);
+      let head = generateDuplicatesList(10);
       let start = new Date();
       removeDuplicates(head);
       let stop = new Date();
