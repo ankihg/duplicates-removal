@@ -1,52 +1,54 @@
 let expect = require('chai').expect;
-let removeDuplicates = require('../lib/remove-duplicates.js');
+let removeDuplicates = require('../lib/remove-duplicates');
 let generateDuplicatesList = require('../lib/generate-duplicates-list');
+let Node = require('../lib/linked-list/node')
 
 describe('duplicates remover testing', () => {
 
-  // it('preserves order', () => {
-  //   let list = ['plz@respond.com', 'tad@salemtourism.org', 'hilda@squirrels.net', 'hilda@squirrels.net', 'tad@salemtourism.org', 'hjalp@mig.com'];
-  //   let initLength = list.length;
-  //
-  //   removeDuplicates(list);
-  //
-  //   // two elements removed
-  //   expect(list.length).eql(initLength-2);
-  //
-  //   // same order as input
-  //   expect(list[0]).eql('plz@respond.com');
-  //   expect(list[1]).eql('tad@salemtourism.org');
-  //   expect(list[2]).eql('hilda@squirrels.net');
-  //   expect(list[3]).eql('hjalp@mig.com');
-  // })
-  //
-  //
-  // it('handles empty list', () => {
-  //   let list = [];
-  //   removeDuplicates(list);
-  //   expect(list).eql([]);
-  // })
+  it('preserves order', () => {
+    let head = new Node(null);
+    let list = ['plz@respond.com', 'tad@salemtourism.org', 'hilda@squirrels.net', 'hilda@squirrels.net', 'tad@salemtourism.org', 'hjalp@mig.com'];
+    head.fromArr(list);
+    console.log(head.toArr());
 
+    removeDuplicates(head);
+    console.log(head.toArr());
 
-  describe('ensure speed', () => {
-    it('fast', function(done) {
-      this.timeout(50000)
-      let list = generateDuplicatesList(100000);
-      console.log('generated');
-      let start = new Date();
-      console.log('timer started');
-      removeDuplicates(list);
-      let stop = new Date();
-      console.log('timer ended');
-      console.log(start);
-      console.log(stop);
-      let time = stop - start;
-      console.log(time);
-      done();
-    })
-
-
+    // same order as input
+    expect(head.next.value).eql('plz@respond.com');
+    expect(head.next.next.value).eql('tad@salemtourism.org');
+    expect(head.next.next.next.value).eql('hilda@squirrels.net');
+    expect(head.next.next.next.next.value).eql('hjalp@mig.com');
+    expect(head.next.next.next.next.next).eql(null);
   })
+
+
+  it('handles empty list', () => {
+    let list = new Node(null);
+    removeDuplicates(list);
+    expect(list).eql(new Node(null));
+  })
+
+
+  // describe('ensure speed', () => {
+  //   it('fast', function(done) {
+  //     this.timeout(50000)
+  //     let head = generateDuplicatesList(10);
+  //     console.log('generated');
+  //     let start = new Date();
+  //     console.log('timer started');
+  //     removeDuplicates(list);
+  //     let stop = new Date();
+  //     console.log('timer ended');
+  //     console.log(start);
+  //     console.log(stop);
+  //     let time = stop - start;
+  //     console.log(time);
+  //     done();
+  //   })
+  //
+  //
+  // })
 
 
 
