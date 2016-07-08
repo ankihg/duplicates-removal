@@ -1,6 +1,9 @@
 module.exports = function(app) {
   app.component('duplicatesDisplay', {
     templateUrl: './components/duplicates-display/template.html',
-    controller: function() {}
+    controller: function() {},
+    bindings: {
+      addresses: '='
+    }
   })
 }
