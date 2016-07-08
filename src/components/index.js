@@ -1,3 +1,4 @@
 module.exports = function(app) {
-  require('./address-input')(app);
+  require('./app')(app);
+  require('./duplicates-display')(app);
 }
