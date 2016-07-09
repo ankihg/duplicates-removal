@@ -1,13 +1,12 @@
 @import 'colors';
 
 body {
-  background-color: #377F41;
+  background-color: $color;
 }
 
-main {
-  background-color: #377F41;
-}
-
-#app {
-  background-color: #377F41;
+section {
+  border: 3px solid $border;
+  margin: 2%;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, .5);
 }
