@@ -1,7 +1,7 @@
 module.exports = function(app) {
   app.component('app', {
     templateUrl: './components/app/template.html',
-    controller: function() {
+    controller: ['$scope', 'UtilService', function($scope, utilService) {
       var vm = this;
 
       vm.addresses = [
@@ -11,7 +11,7 @@ module.exports = function(app) {
 
       return vm;
 
-    },
+    }],
     controllerAs: 'appCtrl'
   })
 }

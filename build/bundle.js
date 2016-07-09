@@ -51,6 +51,7 @@
 	var app = angular.module('app', [ngMaterial]);
 
 	__webpack_require__(9)(app);
+	__webpack_require__(14)(app);
 
 	app.controller('MainController', [function() {
 	  var vm = this;
@@ -66839,18 +66840,112 @@
 
 	module.exports = function(app) {
 	  __webpack_require__(10)(app);
-	  __webpack_require__(11)(app);
 	}
 
 
 /***/ },
 /* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(app) {
+	  app.factory('UtilService', [function() {
+
+	    this.generateDuplicates = __webpack_require__(11);
+	    this.removeDuplicates = __webpack_require__(13);
+	    this.linkedListNode = __webpack_require__(12);
+
+	    return this;
+
+	  }]);
+	}
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Node = __webpack_require__(12);
+
+	module.exports = function(n) {
+	  console.log('generate duplicates');
+	  var head = new Node(null);
+	  var currentNode = head;
+	  for (var i = 0; i < n; i++) {
+	    currentNode.next = new Node(Math.floor(Math.random()* (3*n/4)).toString());
+	    currentNode = currentNode.next;
+	  }
+	  return head;
+	}
+
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	var Node = module.exports = function(value, next) {
+	  this.value = value;
+	  this.next = next || null;
+	}
+
+	Node.prototype.fromArr = function(arr) {
+	  if (!arr || !arr.length) return;
+	  this.next = new Node(arr.shift());
+	  this.next.fromArr(arr);
+	}
+
+
+	Node.prototype.toArr = function(arr) {
+	  arr = arr || [];
+
+	  arr.push(this.value);
+	  if (this.next) return this.next.toArr(arr);
+	  return arr;
+	}
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Node = __webpack_require__(12);
+
+	module.exports = function(head) {
+	  var found = Object.create(null); //empty object; does not inherit from protoype
+
+	  //linked list for the win?
+
+	  var currentNode = head;
+	  while (currentNode.next) {
+	    if (found[currentNode.next.value]) currentNode.next = currentNode.next.next //skip next element
+	    else {
+	      found[currentNode.next.value] = 1; //put value on found hash
+	      currentNode = currentNode.next; //go to next element
+	    }
+	  }
+
+	}
+
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(app) {
+	  __webpack_require__(15)(app);
+	  __webpack_require__(16)(app);
+	  __webpack_require__(17)(app);
+
+	}
+
+
+/***/ },
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = function(app) {
 	  app.component('app', {
 	    templateUrl: './components/app/template.html',
-	    controller: function() {
+	    controller: ['$scope', 'UtilService', function($scope, utilService) {
 	      var vm = this;
 
 	      vm.addresses = [
@@ -66860,14 +66955,14 @@
 
 	      return vm;
 
-	    },
+	    }],
 	    controllerAs: 'appCtrl'
 	  })
 	}
 
 
 /***/ },
-/* 11 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = function(app) {
@@ -66877,6 +66972,20 @@
 	    bindings: {
 	      addresses: '='
 	    }
+	  })
+	}
+
+
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.component('addressInput', {
+	    templateUrl: './components/address-input/template.html',
+	    controller: ['$scope', 'UtilService', function($scope, utilService) {
+	      $scope.utilService = utilService;
+	    }]
 	  })
 	}
 
