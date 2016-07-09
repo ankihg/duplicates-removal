@@ -1,0 +1,23 @@
+#about-me {
+  background-color: #DABFFF;
+  margin: 0 auto 5% auto;
+  text-align: center;
+  padding: 1%;
+
+  #name {
+    font-size: 300%;
+    line-height: 50%;
+  }
+
+  .links {
+    white-space:nowrap;
+
+    img {
+      max-width: 2%;
+      max-height: 2%;
+      padding-left: 1%;
+    }
+  }
+
+
+}
