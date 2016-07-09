@@ -7,8 +7,6 @@ var app = angular.module('app', [ngMaterial]);
 require('./services')(app);
 require('./components')(app);
 
-app.controller('MainController', [function() {
-  var vm = this;
-  vm.plz = 'respond';
-  return vm;
-}])
+app.config(['$mdThemingProvider', function($mdThemingProvider) {
+  $mdThemingProvider.setDefaultTheme('none');
+}]);

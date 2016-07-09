@@ -53,11 +53,9 @@
 	__webpack_require__(9)(app);
 	__webpack_require__(14)(app);
 
-	app.controller('MainController', [function() {
-	  var vm = this;
-	  vm.plz = 'respond';
-	  return vm;
-	}])
+	app.config(['$mdThemingProvider', function($mdThemingProvider) {
+	  $mdThemingProvider.setDefaultTheme('none');
+	}]);
 
 
 /***/ },
