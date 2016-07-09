@@ -66933,6 +66933,7 @@
 	  __webpack_require__(16)(app);
 	  __webpack_require__(17)(app);
 	  __webpack_require__(18)(app);
+	  __webpack_require__(19)(app);
 	}
 
 
@@ -67021,6 +67022,18 @@
 	    bindings: {
 	      uniqueAddresses: '='
 	    }
+	  })
+	}
+
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.component('aboutMe', {
+	    templateUrl: './components/about-me/template.html',
+	    controller: function() {}
 	  })
 	}
 
