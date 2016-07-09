@@ -9,6 +9,8 @@ module.exports = function(app) {
         'respond'
       ]
 
+      vm.addressesLinkedList = null;
+
       return vm;
 
     }],
