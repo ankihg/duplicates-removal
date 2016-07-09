@@ -5,7 +5,8 @@ const webpack = require('webpack-stream');
 const sources = {
   js: __dirname + '/src/index.js',
   html: __dirname + '/src/**/*.html',
-  css: __dirname + '/src/styles/**/*.css'
+  css: __dirname + '/src/styles/**/*.css',
+  assets: __dirname + '/src/assets/**/*.*'
 }
 
 gulp.task('bundle:dev', () => {
@@ -24,4 +25,9 @@ gulp.task('copyCss', () => {
     .pipe(gulp.dest('./build/styles'));
 });
 
-gulp.task('default', ['bundle:dev', 'copyHtml', 'copyCss']);
+gulp.task('copyAssets', () => {
+  return gulp.src(sources.assets)
+    .pipe(gulp.dest('./build/assets'));
+})
+
+gulp.task('default', ['bundle:dev', 'copyHtml', 'copyCss', 'copyAssets']);
