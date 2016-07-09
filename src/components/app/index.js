@@ -10,7 +10,14 @@ module.exports = function(app) {
       ]
 
       vm.addressesLinkedList = null;
-      vm.unqiueAddresses = null;
+      vm.uniqueAddresses = null;
+
+
+      vm.run = function() {
+        console.log('run');
+        utilService.removeDuplicates(vm.addressesLinkedList);
+        vm.uniqueAddresses = vm.addressesLinkedList.toArr();
+      }
 
       return vm;
 

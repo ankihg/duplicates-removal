@@ -66954,7 +66954,14 @@
 	      ]
 
 	      vm.addressesLinkedList = null;
-	      vm.unqiueAddresses = null;
+	      vm.uniqueAddresses = null;
+
+
+	      vm.run = function() {
+	        console.log('run');
+	        utilService.removeDuplicates(vm.addressesLinkedList);
+	        vm.uniqueAddresses = vm.addressesLinkedList.toArr();
+	      }
 
 	      return vm;
 
@@ -67014,7 +67021,7 @@
 	    templateUrl: './components/unique-display/template.html',
 	    controller: function() {},
 	    bindings: {
-	      unqiueAddresses: '='
+	      uniqueAddresses: '='
 	    }
 	  })
 	}

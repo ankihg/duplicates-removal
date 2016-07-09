@@ -3,7 +3,7 @@ module.exports = function(app) {
     templateUrl: './components/unique-display/template.html',
     controller: function() {},
     bindings: {
-      unqiueAddresses: '='
+      uniqueAddresses: '='
     }
   })
 }
