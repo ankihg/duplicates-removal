@@ -1,6 +1,6 @@
 <section>
-  <button data-ng-click="utilService.generateDuplicates()">generate</button>
-  <input placeholder="n">
+  <button data-ng-click="$ctrl.addresses = utilService.generateDuplicates(n).toArr()">generate</button>
+  <input placeholder="n" data-ng-model="n">
 
 
 </section>

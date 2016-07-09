@@ -66852,7 +66852,7 @@
 
 	    this.generateDuplicates = __webpack_require__(11);
 	    this.removeDuplicates = __webpack_require__(13);
-	    this.linkedListNode = __webpack_require__(12);
+	    // this.linkedListNode = require(__dirname+'/../../lib/linked-list/node');
 
 	    return this;
 
@@ -66985,7 +66985,11 @@
 	    templateUrl: './components/address-input/template.html',
 	    controller: ['$scope', 'UtilService', function($scope, utilService) {
 	      $scope.utilService = utilService;
-	    }]
+	      $scope.n = 100;
+	    }],
+	    bindings: {
+	      addresses: '='
+	    }
 	  })
 	}
 

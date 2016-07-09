@@ -3,7 +3,7 @@ module.exports = function(app) {
 
     this.generateDuplicates = require(__dirname+'/../../lib/generate-duplicates-list');
     this.removeDuplicates = require(__dirname+'/../../lib/remove-duplicates');
-    this.linkedListNode = require(__dirname+'/../../lib/linked-list/node');
+    // this.linkedListNode = require(__dirname+'/../../lib/linked-list/node');
 
     return this;
 
