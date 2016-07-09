@@ -66934,7 +66934,7 @@
 	  __webpack_require__(15)(app);
 	  __webpack_require__(16)(app);
 	  __webpack_require__(17)(app);
-
+	  __webpack_require__(18)(app);
 	}
 
 
@@ -66954,6 +66954,7 @@
 	      ]
 
 	      vm.addressesLinkedList = null;
+	      vm.unqiueAddresses = null;
 
 	      return vm;
 
@@ -66991,7 +66992,7 @@
 
 	      vm.setAddresses = function(n) {
 	        this.addressesLinkedList = utilService.generateDuplicates(n);
-	        this.addresses = this.addressesLinkedList.toArr()
+	        this.addresses = this.addressesLinkedList.toArr();
 	      }
 
 	      return vm;
@@ -66999,6 +67000,21 @@
 	    bindings: {
 	      addresses: '=',
 	      addressesLinkedList: '='
+	    }
+	  })
+	}
+
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.component('uniqueDisplay', {
+	    templateUrl: './components/unique-display/template.html',
+	    controller: function() {},
+	    bindings: {
+	      unqiueAddresses: '='
 	    }
 	  })
 	}

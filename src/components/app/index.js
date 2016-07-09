@@ -10,6 +10,7 @@ module.exports = function(app) {
       ]
 
       vm.addressesLinkedList = null;
+      vm.unqiueAddresses = null;
 
       return vm;
 

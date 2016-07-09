@@ -7,7 +7,7 @@ module.exports = function(app) {
 
       vm.setAddresses = function(n) {
         this.addressesLinkedList = utilService.generateDuplicates(n);
-        this.addresses = this.addressesLinkedList.toArr()
+        this.addresses = this.addressesLinkedList.toArr();
       }
 
       return vm;
