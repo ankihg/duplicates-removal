@@ -9,9 +9,11 @@ Taking advantage of the fact that input is email addresses (a String), I use a J
 
 Now it is time to account for the removal process. Removal from an array is expensive; worst case O(n) when being removed from the front of the array. Linked lists achieve constant time removal by setting a node's `.next` property to `.next.next`.
 
+
+
 ## Design considerations
 
-I decided to handle the removal of duplicates on the front-end to simplify architecture. As no application was given I can't say how the trade-offs would weigh out. This could be a useful function to run on the client side before sending data to the server to reduce data transmission and save server resources. With an O(n) runtime complexity, it could handle a substantially large input size without sacrificing user experience. A delayed user experience is something to be avoided at all costs so depending on the application it might be better to perform this on the back end. 
+I decided to handle the removal of duplicates on the front-end to simplify architecture. As no application was given I can't say how the trade-offs would weigh out. This could be a useful function to run on the client side before sending data to the server to reduce data transmission and save server resources. With an O(n) runtime complexity, it could handle a substantially large input size without sacrificing user experience. A delayed user experience is to be avoided at all costs so depending on the application it might be better to perform this on the back end.
 
 
 ## Font-end architecture
