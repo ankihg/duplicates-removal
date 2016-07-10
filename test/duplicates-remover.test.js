@@ -1,7 +1,7 @@
-let expect = require('chai').expect;
-let removeDuplicates = require('../lib/remove-duplicates');
-let generateDuplicatesList = require('../lib/generate-duplicates-list');
-let Node = require('../lib/linked-list/node')
+const expect = require('chai').expect,
+  removeDuplicates = require('../lib/remove-duplicates'),
+  generateDuplicatesList = require('../lib/generate-duplicates-list'),
+  Node = require('../lib/linked-list/node');
 
 describe('duplicates remover testing', () => {
 
