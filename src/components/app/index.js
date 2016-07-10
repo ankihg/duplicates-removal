@@ -4,11 +4,7 @@ module.exports = function(app) {
     controller: ['$scope', 'UtilService', function($scope, utilService) {
       var vm = this;
 
-      vm.addresses = [
-        'plz',
-        'respond'
-      ]
-
+      vm.addresses = [];
       vm.addressesLinkedList = null;
       vm.uniqueAddresses = null;
       vm.runtime = 0;
