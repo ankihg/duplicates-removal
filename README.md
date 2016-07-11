@@ -7,7 +7,7 @@ This implementation of removal of duplicates is written in JavaScript and achiev
 
 ### A quest for linear time complexity
 
-A naive approach to this algorithm could keep an array of found addresses, iterating over it for each element of the input. Best case this would achieve O(n) (not accounting for the removal process), where there are no duplicates. Worst case would be O(n^2) where all elements are duplicated. Could an alternate data structure with more efficient look ups be introduced to track found addresses?
+A naive approach to this algorithm could keep an array of found addresses, iterating over it for each element of the input. Best case, this would achieve O(n) (not accounting for the removal process), where there are no duplicates, but would increase exponentially as the number of duplicates increases, arriving at a worst case of O(n^2) where all elements are duplicated. Could an alternate data structure with more efficient look ups be introduced to track found addresses?
 
 #### Enter hashing
 
