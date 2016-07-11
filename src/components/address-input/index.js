@@ -4,14 +4,6 @@ module.exports = function(app) {
     controller: ['UtilService', function(utilService) {
       var vm = this;
       vm.n = 100;
-
-
-      vm.setAddresses = this.setAddresses;
-      // vm.setAddresses = function(n) {
-      //   this.addressesLinkedList = utilService.generateDuplicates(n);
-      //   this.addresses = this.addressesLinkedList.toArr();
-      // }
-
       return vm;
     }],
     bindings: {

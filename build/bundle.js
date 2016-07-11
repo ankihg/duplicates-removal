@@ -66983,7 +66983,6 @@
 	module.exports = function(app) {
 	  app.component('duplicatesDisplay', {
 	    templateUrl: './components/duplicates-display/template.html',
-	    controller: function() {},
 	    bindings: {
 	      addresses: '='
 	    }
@@ -67001,14 +67000,6 @@
 	    controller: ['UtilService', function(utilService) {
 	      var vm = this;
 	      vm.n = 100;
-
-
-	      vm.setAddresses = this.setAddresses;
-	      // vm.setAddresses = function(n) {
-	      //   this.addressesLinkedList = utilService.generateDuplicates(n);
-	      //   this.addresses = this.addressesLinkedList.toArr();
-	      // }
-
 	      return vm;
 	    }],
 	    bindings: {
@@ -67025,7 +67016,6 @@
 	module.exports = function(app) {
 	  app.component('uniqueDisplay', {
 	    templateUrl: './components/unique-display/template.html',
-	    controller: function() {},
 	    bindings: {
 	      uniqueAddresses: '='
 	    }
@@ -67054,8 +67044,7 @@
 
 	module.exports = function(app) {
 	  app.component('aboutMe', {
-	    templateUrl: './components/about-me/template.html',
-	    controller: function() {}
+	    templateUrl: './components/about-me/template.html'
 	  })
 	}
 
