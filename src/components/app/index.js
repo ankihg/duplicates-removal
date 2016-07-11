@@ -9,6 +9,10 @@ module.exports = function(app) {
       vm.uniqueAddresses = null;
       vm.runtime = 0;
 
+      vm.setAddresses = function(n) {
+        vm.addressesLinkedList = utilService.generateDuplicates(n);
+        vm.addresses = this.addressesLinkedList.toArr();
+      }
 
       vm.run = function() {
         console.log('run');

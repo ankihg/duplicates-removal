@@ -5,16 +5,17 @@ module.exports = function(app) {
       var vm = this;
       vm.n = 100;
 
-      vm.setAddresses = function(n) {
-        this.addressesLinkedList = utilService.generateDuplicates(n);
-        this.addresses = this.addressesLinkedList.toArr();
-      }
+
+      vm.setAddresses = this.setAddresses;
+      // vm.setAddresses = function(n) {
+      //   this.addressesLinkedList = utilService.generateDuplicates(n);
+      //   this.addresses = this.addressesLinkedList.toArr();
+      // }
 
       return vm;
     }],
     bindings: {
-      addresses: '=',
-      addressesLinkedList: '='
+      setAddresses: '&'
     }
   })
 }

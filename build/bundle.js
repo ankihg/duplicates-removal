@@ -66952,6 +66952,10 @@
 	      vm.uniqueAddresses = null;
 	      vm.runtime = 0;
 
+	      vm.setAddresses = function(n) {
+	        vm.addressesLinkedList = utilService.generateDuplicates(n);
+	        vm.addresses = this.addressesLinkedList.toArr();
+	      }
 
 	      vm.run = function() {
 	        console.log('run');
@@ -66996,16 +67000,17 @@
 	      var vm = this;
 	      vm.n = 100;
 
-	      vm.setAddresses = function(n) {
-	        this.addressesLinkedList = utilService.generateDuplicates(n);
-	        this.addresses = this.addressesLinkedList.toArr();
-	      }
+
+	      vm.setAddresses = this.setAddresses;
+	      // vm.setAddresses = function(n) {
+	      //   this.addressesLinkedList = utilService.generateDuplicates(n);
+	      //   this.addresses = this.addressesLinkedList.toArr();
+	      // }
 
 	      return vm;
 	    }],
 	    bindings: {
-	      addresses: '=',
-	      addressesLinkedList: '='
+	      setAddresses: '&'
 	    }
 	  })
 	}
