@@ -16,7 +16,19 @@ Taking advantage of the fact that input is email addresses (a String), I use a J
 Now it is time to account for the removal process. Removal from an array is expensive; worst case O(n) when being removed from the front of the array. Linked lists achieve constant time removal by setting a node's `.next` property to `.next.next`. Let's see where these refactors have left us.
 
 ### Arrival at linear time complexity
-
+```
+function(head) {
+  var found = Object.create(null); // empty object; does not inherit from protoype to avoid collision
+  var currentNode = head; // tracks current node
+  while (currentNode.next) { // iteration through n input elements
+    if (found[currentNode.next.value]) currentNode.next = currentNode.next.next // constant time lookup and removal
+    else { // if it has not been found
+      found[currentNode.next.value] = 1; //put value on found hash
+      currentNode = currentNode.next; //go to next element
+    }
+  }
+}
+```
 
 ## Design considerations
 
