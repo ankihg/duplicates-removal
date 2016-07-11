@@ -1,16 +1,12 @@
 <main>
 
   <div class="four columns offset-by-one">
-    <!-- <address-input addresses="appCtrl.addresses" addresses-linked-list="appCtrl.addressesLinkedList"></address-input> -->
     <address-input set-addresses="appCtrl.setAddresses(n)"></address-input>
     <duplicates-display addresses="appCtrl.addresses"></duplicates-display>
   </div>
 
   <div class="four columns offset-by-one">
-    <section>
-      <button data-ng-click="appCtrl.run()">run</button>
-      <span>runtime: {{appCtrl.runtime}}ms</span>
-    </section>
+    <runner run="appCtrl.run()" runtime="{{appCtrl.runtime}}"></runner>
     <unique-display unique-addresses="appCtrl.uniqueAddresses"></unique-display>
   </div>
 </main>

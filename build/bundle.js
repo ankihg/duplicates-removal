@@ -66934,6 +66934,7 @@
 	  __webpack_require__(17)(app);
 	  __webpack_require__(18)(app);
 	  __webpack_require__(19)(app);
+	  __webpack_require__(20)(app);
 	}
 
 
@@ -67034,6 +67035,21 @@
 
 /***/ },
 /* 19 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.component('runner', {
+	    templateUrl: './components/runner/template.html',
+	    bindings: {
+	      run: '&',
+	      runtime: '@'
+	    }
+	  })
+	}
+
+
+/***/ },
+/* 20 */
 /***/ function(module, exports) {
 
 	module.exports = function(app) {
