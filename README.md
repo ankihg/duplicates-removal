@@ -5,7 +5,7 @@ This implementation of removal of duplicates achieves O(n).
 
 ### A quest for linear time complexity
 
-An initial, naive approach to this algorithm could keep an array of found addresses, iterating over it for each element of the input. Best case this would achieve O(n) (not accounting for the removal process), where there are no duplicates. Worst case would be O(n^2) where all elements are duplicated. Could an alternate data structure with more efficient look ups be introduced to track found addresses?
+A naive approach to this algorithm could keep an array of found addresses, iterating over it for each element of the input. Best case this would achieve O(n) (not accounting for the removal process), where there are no duplicates. Worst case would be O(n^2) where all elements are duplicated. Could an alternate data structure with more efficient look ups be introduced to track found addresses?
 
 #### Enter hashing
 
@@ -13,7 +13,7 @@ Taking advantage of the fact that input is email addresses (a String), I use a J
 
 #### Enter linked list
 
-Now it is time to account for the removal process. Removal from an array is expensive; worst case O(n) when being removed from the front of the array. Linked lists achieve constant time removal by setting a node's `.next` property to `.next.next`.
+Now it is time to account for the removal process. Removal from an array is expensive; worst case O(n) when being removed from the front of the array. Linked lists achieve constant time removal by setting a node's `.next` property to `.next.next`. Let's see where these refactors have left us.
 
 ### Arrival at linear time complexity
 
