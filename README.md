@@ -13,7 +13,9 @@ Now it is time to account for the removal process. Removal from an array is expe
 
 ## Design considerations
 
-I decided to handle the removal of duplicates on the front-end to simplify architecture. As no application was given I can't say how the trade-offs would weigh out. This could be a useful function to run on the client side before sending data to the server to reduce data transmission and save server resources. With an O(n) runtime complexity, it could handle a substantially large input size without sacrificing user experience. A delayed user experience is to be avoided at all costs so depending on the application it might be better to perform this on the back end.
+Since no design specifications conflict with doing so, the removal of duplicates is handled on the front-end to simplify architecture. This could be a useful task to run on the client side before sending data to the server to reduce data transmission and save server resources. With an O(n) runtime complexity, it could handle a substantially large input size without sacrificing user experience. This task may be better performed on the back-end where the input size is very large or the client has other resource-intensive responsibilities to prioritize user experience.
+
+One peculiarity of design is the use of linked-list for input and output to the duplicates removal function but arrays for the data display with Angular. With linked list's constant time removal, it is clearly an optimal choice for the duplicates removal problem but Angular's ng-repeat directive which can only be used on JavaScript Collections is the typical approach for iterating over elements with Angular. With more time, I would write an Angular directive to display linked lists. 
 
 
 ## Font-end architecture
