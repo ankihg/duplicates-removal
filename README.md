@@ -1,6 +1,6 @@
 # Duplicates removal
 
-This project is deployed at [duplicates-removal-ankihg.herokuapp.com](https://duplicates-removal-ankihg.herokuapp.com/)
+Please visit this project at [duplicates-removal-ankihg.herokuapp.com](https://duplicates-removal-ankihg.herokuapp.com/)
 
 ## Runtime analysis
 This implementation of removal of duplicates is written in JavaScript and achieves O(n).
