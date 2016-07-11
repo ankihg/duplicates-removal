@@ -66948,15 +66948,16 @@
 	    controller: ['$scope', 'UtilService', function($scope, utilService) {
 	      var vm = this;
 
-	      vm.addresses = [];
+	      vm.addresses = null;
 	      vm.addressesLinkedList = null;
 	      vm.uniqueAddresses = null;
 	      vm.runtime = 0;
 
 	      vm.setAddresses = function(n) {
+	        vm.uniqueAddresses = null;
+
 	        vm.addressesLinkedList = utilService.generateDuplicates(n);
 	        vm.addresses = this.addressesLinkedList.toArr();
-	        vm.uniqueAddresses = null;
 	      }
 
 	      vm.run = function() {
