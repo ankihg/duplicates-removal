@@ -18,11 +18,12 @@ Now it is time to account for the removal process. Removal from an array is expe
 ### Arrival at linear time complexity
 ```
 function removeDuplicates(head) {
-  var found = Object.create(null);                 // empty object; does not inherit from protoype to avoid collision
-  var currentNode = head;                          // tracks current node
-  while (currentNode.next) {                       // iteration through n input elements
-    if (found[currentNode.next.value]) currentNode.next = currentNode.next.next // constant time lookup and removal
-    else { // if it has not been found
+  var found = Object.create(null);                // empty object; does not inherit from protoype to avoid collision
+  var currentNode = head;                         // tracks current node
+  while (currentNode.next) {                      // iteration through n input elements
+    if (found[currentNode.next.value])            // constant time lookup of found addresses
+      currentNode.next = currentNode.next.next    // constant time removal of duplicates
+    else {                                        // if it has not been found
       found[currentNode.next.value] = 1;          //put value on found hash
       currentNode = currentNode.next;             //go to next element
     }
