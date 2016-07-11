@@ -24,8 +24,8 @@ function removeDuplicates(head) {
     if (found[currentNode.next.value])            // constant time lookup of found addresses
       currentNode.next = currentNode.next.next    // constant time removal of duplicates
     else {                                        // if it has not been found
-      found[currentNode.next.value] = 1;          //put value on found hash
-      currentNode = currentNode.next;             //go to next element
+      found[currentNode.next.value] = 1;          // put value on found hash
+      currentNode = currentNode.next;             // go to next element
     }
   }
 }
