@@ -18,6 +18,10 @@ Taking advantage of the fact that input is email addresses (a String), I use a J
 Removal from an array is expensive; worst case O(n) when being removed from the front of the array. Linked lists achieve constant time removal by setting a node's `.next` property to `.next.next`. Let's see where these refactors have left us.
 
 ### Arrival at linear time complexity
+Since both duplicate lookups and removal occur within iteration of the input addresses, cutting these processeses to constant time dramatically reduces complexity. 
+
+Before entering iteration of input addresses, I initialize two objects, a `found` JavaScript object to track found addresses and a `currentNode` to track the position in the linked list.
+
 ```
 function removeDuplicates(head) {
 
