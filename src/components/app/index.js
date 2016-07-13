@@ -17,7 +17,6 @@ module.exports = function(app) {
       }
 
       vm.run = function() {
-        console.log('run');
         var start = new Date();
         utilService.removeDuplicates(vm.addressesLinkedList);
         var end = new Date();
