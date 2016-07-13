@@ -20,6 +20,8 @@ Removal from an array is expensive; worst case O(n) when being removed from the 
 ### Arrival at linear time complexity
 Since both duplicate lookup and removal occur within iteration of the input addresses, cutting these processeses to constant time dramatically reduces complexity. 
 
+Time to walk through the algorithm.
+
 The parameter `head` is a null-value node pointing to a node of the first input address.
 
 Before entering iteration of input addresses, I initialize two objects, a `found` JavaScript object to track found addresses and a `currentNode` to track the position in the linked list set to `head`.
