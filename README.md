@@ -55,6 +55,8 @@ Since no design specifications conflict with doing so, the removal of duplicates
 
 One peculiarity of design is the use of linked-list for input and output to the duplicates removal function but arrays for the data display with Angular. With linked list's constant time removal, it is clearly an optimal choice for the duplicates removal problem but Angular's ng-repeat directive which can only be used on JavaScript Collections is the typical approach for iterating over elements with Angular. With more time, I would write an Angular directive to display linked lists. 
 
+I decided not to include validation for email addresses because I took the significance of that detail to be that the input is Strings so they can be efficiently looked up through hashing. Email validation could easily be added through Angular if user email address input is allowed. 
+
 
 ## Front-end architecture
 I organanized the front end according to Angular's component-based architecture. This style was recently introduced to me and I appreciate it for its ease of navigation, reusability, and representation of data flow. I included a `UtilService` to provide functionality shared between componenents.
