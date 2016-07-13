@@ -13,7 +13,7 @@ module.exports = function(app) {
         vm.uniqueAddresses = null;
 
         vm.addressesLinkedList = utilService.generateDuplicates(n);
-        vm.addresses = this.addressesLinkedList.toArr();
+        vm.addresses = this.addressesLinkedList.next ? this.addressesLinkedList.next.toArr() : null;
       }
 
       vm.run = function() {
@@ -22,7 +22,7 @@ module.exports = function(app) {
         utilService.removeDuplicates(vm.addressesLinkedList);
         var end = new Date();
         vm.runtime = end - start;
-        vm.uniqueAddresses = vm.addressesLinkedList.toArr();
+        vm.uniqueAddresses = this.addressesLinkedList.next ? this.addressesLinkedList.next.toArr() : null;
       }
 
       return vm;
