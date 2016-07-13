@@ -31,7 +31,7 @@ function removeDuplicates(head) {
   while (currentNode.next) {                    // iteration through n input elements
   
     if (found[currentNode.next.value])          // constant time lookup of found addresses
-      currentNode.next = currentNode.next.next  // constant time removal of duplicates
+      currentNode.next = currentNode.next.next; // constant time removal of duplicates
       
     else {                                      // if it has not been found
       found[currentNode.next.value] = 1;        // put value on found hash
@@ -48,5 +48,5 @@ Since no design specifications conflict with doing so, the removal of duplicates
 One peculiarity of design is the use of linked-list for input and output to the duplicates removal function but arrays for the data display with Angular. With linked list's constant time removal, it is clearly an optimal choice for the duplicates removal problem but Angular's ng-repeat directive which can only be used on JavaScript Collections is the typical approach for iterating over elements with Angular. With more time, I would write an Angular directive to display linked lists. 
 
 
-## Font-end architecture
+## Front-end architecture
 I organanized the front end according to Angular's component-based architecture. This style was recently introduced to me and I appreciate it for its ease of navigation, reusability, and representation of data flow. I included a `UtilService` to provide functionality shared between componenents.
