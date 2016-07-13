@@ -11,7 +11,7 @@ One approach to this algorithm could keep an array of found addresses, iterating
 
 #### Enter hashing
 
-Taking advantage of the fact that input is email addresses (a String), I use a JavaScript key/value object as a hash. Hashing achieves an O(1) lookup, sparing the expense of iterating through all found elements for each input element. Now it is time to account for the removal process. 
+Taking advantage of the fact that input is email addresses (a String), I use a JavaScript key/value object as a hash. Hashing achieves an O(1) lookup, sparing the expense of iterating through all found elements for each input element. Now it's time to account for the removal process. 
 
 #### Enter linked list
 
