@@ -30,7 +30,7 @@ The `currentNode.next.value` is looked up in the `found` hash in constant time. 
 
 Otherwise, if the `currentNode.next.value` wasn't found, it is now marked on the `found` object and the `currentNode` is set to `currentNode.next` for the next iteration.
 
-Because there is one iteration over `n` elements, with only constant time operations performed within it, the runtime complexity of this implemenation of removal of duplicates is ``O(n)``.
+Because there is one iteration over `n` elements, with only constant time operations performed within, the runtime complexity of this implemenation of removal of duplicates is ``O(n)``.
 
 ```
 function removeDuplicates(head) {
