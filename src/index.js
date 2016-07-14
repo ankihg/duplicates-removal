@@ -4,7 +4,6 @@ var angular = require('angular'),
 
 var app = angular.module('app', [ngMaterial]);
 
-require('./services')(app);
 require('./components')(app);
 
 app.config(['$mdThemingProvider', function($mdThemingProvider) {
