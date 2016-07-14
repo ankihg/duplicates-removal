@@ -28,7 +28,7 @@ I move through each element of the linked list until a node with no next propert
 
 The `currentNode.next.value` is looked up in the `found` hash in constant time. If it is found, `currentNode.next` is removed from the linked list in constant time by setting `currentNode.next` to `currentNode.next.next`.
 
-Else, if the `currentNode.next.value` wasn't found, it is marked on the `found` object and the `currentNode` is set to `currentNode.next` for the next iteration.
+Otherwise, if the `currentNode.next.value` wasn't found, it is now marked on the `found` object and the `currentNode` is set to `currentNode.next` for the next iteration.
 
 Since there is one iteration over `n` elements, with only constant time operations performed within it, the runtime complexity of this implemenation of removal of duplicates is ``O(n)``.
 
