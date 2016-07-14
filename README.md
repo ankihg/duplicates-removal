@@ -61,4 +61,4 @@ I decided not to include validation for email addresses because I took the signi
 
 
 ## Front-end architecture
-I organanized the front end according to Angular's component-based architecture. This style was recently introduced to me and I appreciate it for its ease of navigation, reusability, and representation of data flow. I included a `UtilService` to provide functionality shared between componenents.
+I organanized the front end according to Angular's component-based architecture. This style was recently introduced to me and I appreciate it for its ease of navigation, reusability, and representation of data flow. 
