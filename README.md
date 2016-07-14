@@ -61,4 +61,4 @@ I decided not to include validation for email addresses because I took the signi
 
 
 ## Front-end architecture
-I organanized the front end according to Angular's component-based architecture. I recently discovered this design pattern and appreciate it for its ease of navigation, reusability, and representation of data flow. 
+The front end is organized according to Angular's component-based architecture. I recently discovered this design pattern and appreciate it for its ease of navigation, reusability, and representation of data flow. 
