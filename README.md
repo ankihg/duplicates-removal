@@ -26,7 +26,7 @@ Before entering iteration of input addresses, I initialize two objects, a `found
 
 I move through each element of the linked list until a node with no next property is reached. Instead of handling the `currentNode` on the iteration, I handle `currentNode.next` for easy removals. Since the initial  `currentNode` is a pointer to the first input address, this approach will not skip the first input element.
 
-The `currentNode.next.value` is looked up in the `found` hash in constant time. If is is found, `currentNode.next` is removed from the linked list in constant time by setting `currentNode.next = currentNode.next.next`.
+The `currentNode.next.value` is looked up in the `found` hash in constant time. If it is found, `currentNode.next` is removed from the linked list in constant time by setting `currentNode.next = currentNode.next.next`.
 
 Else, if the `currentNode.next.value` wasn't found, it is marked on the `found` object and the `currentNode` is set to `currentNode.next` for the next iteration.
 
